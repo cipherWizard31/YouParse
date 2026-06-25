@@ -61,20 +61,38 @@ document
     const totalViews = parseInt(channel.statistics.viewCount).toLocaleString();
     const videoCount = parseInt(channel.statistics.videoCount).toLocaleString();
 
+    
     document.getElementById('result').innerHTML = `
-  <div class="channel-card" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 400px; font-family: sans-serif;">
-    <img src="${avatarUrl}" alt="${name}" style="width: 100px; height: 100px; border-radius: 50%; display: block; margin: 0 auto 15px;">
-    <h2 style="text-align: center; margin: 0 0 10px 0;">${name}</h2>
-    
-    <div style="display: flex; justify-content: space-around; margin-bottom: 15px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0;">
-      <div style="text-align: center;"><strong>${subscribers}</strong><br><span style="font-size: 12px; color: #666;">Subs</span></div>
-      <div style="text-align: center;"><strong>${totalViews}</strong><br><span style="font-size: 12px; color: #666;">Views</span></div>
-      <div style="text-align: center;"><strong>${videoCount}</strong><br><span style="font-size: 12px; color: #666;">Videos</span></div>
+    <div class="channel-card w-full max-w-[400px] border border-[#3f3f3f] bg-[#212121] py-6 px-4 font-sans text-center">
+      <!-- Avatar -->
+      <img src="${avatarUrl}" alt="${name}" class="w-24 h-24 mx-auto mb-5 object-cover rounded-full">
+      
+      <!-- Title -->
+      <h2 class="text-xl font-bold tracking-wide text-[#f1f1f1] mb-4">${name}</h2>
+      
+      <!-- Stats Row -->
+      <div class="flex justify-around border-y border-[#3f3f3f] py-4 mb-4">
+        <div>
+          <strong class="text-base font-bold text-[#f1f1f1] block mb-0.5">${subscribers}</strong>
+          <span class="text-xs text-[#aaa] tracking-wider uppercase">Subs</span>
+        </div>
+        <div>
+          <strong class="text-base font-bold text-[#f1f1f1] block mb-0.5">${totalViews}</strong>
+          <span class="text-xs text-[#aaa] tracking-wider uppercase">Views</span>
+        </div>
+        <div>
+          <strong class="text-base font-bold text-[#f1f1f1] block mb-0.5">${videoCount}</strong>
+          <span class="text-xs text-[#aaa] tracking-wider uppercase">Videos</span>
+        </div>
+      </div>
+      
+      <!-- Description -->
+      <p class="text-sm text-[#aaa] leading-relaxed tracking-normal text-left px-2 max-h-[100px] overflow-hidden">${description}</p>
     </div>
-    
-    <p style="font-size: 14px; color: #333; line-height: 1.4; max-height: 100px; overflow-y: auto;">${description}</p>
-  </div>
-`;
+  `;
+  
+
+  
     } catch (error) {
       console.error("Request failed:", error);
     }
