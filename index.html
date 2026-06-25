@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouParse | Channel Information Scraper</title>
 </head>
-<body>
-   <!-- Link Form -->
-    <form id="linkForm">
-          <label for="channelLink">Enter YouTube Channel Link:</label>
-          <input type="text" id="channelLink" name="channelLink" required>
-          <button type="submit">Scrape Channel Info</button>
-     </form>
-    
-     <!-- Result Display -->
-     <div id="result"></div>
+<body class="bg-[#0f0f0f] text-[#f1f1f1] font-sans antialiased h-screen w-screen overflow-hidden relative">
+
+    <!-- Centralized Container Locked Directly to the Center -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md flex flex-col items-center justify-center text-center">
+       <!-- Link Form -->
+        <form id="linkForm" class="w-full flex flex-col items-center justify-center mb-6">
+            <div class="w-full bg-[#212121] p-6 border border-[#3f3f3f] shadow-2xl mb-4">
+                <label for="channelLink" class="block mb-3 text-base font-semibold tracking-wide text-[#f1f1f1] text-left">Enter YouTube Channel Link:</label>
+                <input type="text" id="channelLink" name="channelLink" class="bg-[#121212] border border-[#3f3f3f] text-[#f1f1f1] text-sm focus:outline-none focus:ring-1 focus:ring-[#ff0000] focus:border-[#ff0000] block w-full px-4 py-3 placeholder:text-[#aaaaaa] transition-all text-left" placeholder="https://youtube.com" required>
+            </div>
+              <button type="submit" class="w-full bg-[#ff0000] hover:bg-[#cc0000] text-white font-medium text-sm py-3 px-6 shadow-md transition-colors cursor-pointer tracking-wider uppercase">Scrape Channel Info</button>
+         </form>
+        
+         <!-- Result Display -->
+         <div id="result" class="w-full flex flex-col items-center justify-center text-center"></div>
+    </div>
     
      <!-- JavaScript -->
       <script src="env.js"></script>
      <script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </body>
 </html>
